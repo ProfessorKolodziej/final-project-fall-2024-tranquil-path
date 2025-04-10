@@ -1,190 +1,167 @@
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: Arial, sans-serif;
-}
-
-body {
-	background-color: #1a1a1a;
-	color: white;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-/* Screen Sections */
-.screen {
-	display: none;
+/* Mobile-first approach */
+.container {
 	width: 100%;
-	max-width: 320px;
-	height: 568px;
-	padding: 20px;
 	position: relative;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+/* Start Screen Styles */
+.start {
+	border-radius: 20%;
+	background: #bfd9e9;
+	padding: 10vh;
+	margin-top: 22vh;
+	height: 55vh;
+	box-sizing: border-box;
+}
+
+.start h3 {
+	font-size: 22px;
+	color: #fff;
 	text-align: center;
 }
 
-.screen.active {
-	display: block;
-}
-
-/* Card Styling (Menu and End Screen) */
-.card {
-	background-color: #B2D9EF;
-	border-radius: 20px;
-	padding: 40px 20px;
-	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.card h1 {
-	color: #333;
-	font-size: 24px;
-	margin-bottom: 20px;
-}
-
-.card p {
-	color: #333;
-	font-size: 18px;
-	margin-bottom: 20px;
-}
-
-.card button,
-.next-btn {
-	background-color: #A3BFE9;
-	border: none;
-	border-radius: 20px;
-	padding: 10px 20px;
-	font-size: 16px;
-	color: #333;
+.btn_start {
+	font-size: 20px;
+	color: #fff;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	margin: 0 20px;
+	background: #89c7e3;
+	border-radius: 40px;
+	margin-top: 10vh;
 	cursor: pointer;
-	margin: 10px;
 }
 
-.card button:hover,
-.next-btn:hover {
-	background-color: #99c1f1;
-}
-
-/* Stage Labels */
-.stage-label {
-	position: absolute;
-	top: 20px;
-	left: 20px;
-	font-size: 18px;
-	font-weight: bold;
-}
-
-/* Stage 1 (Breathing Exercise) */
-#stage1-screen {
-	background: linear-gradient(to bottom, #4facfe, #00f2fe);
-	/* Placeholder for beach image */
-}
-
-.breathing-circle {
-	width: 150px;
-	height: 150px;
-	background-color: #ffd700;
-	border: 5px solid #ff8c00;
-	border-radius: 50%;
-	margin: 100px auto;
+.jump_btn {
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
-	animation: breathe 4s infinite ease-in-out;
+	margin-top: 30px;
+	padding: 0 20px;
 }
 
-.circle-text {
-	color: #333;
-	font-size: 18px;
-	font-weight: bold;
+.jump_btn a {
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 20px;
+	color: #fff;
+	background: #89c7e3;
+	text-decoration: none;
+	border-radius: 20px;
+	font-size: 14px;
 }
 
-@keyframes breathe {
-	0% {
+/* Stage 1 Styles */
+.bg1 {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background: url(../images/2.jpg) no-repeat center;
+	background-size: 100% 100%;
+}
+
+.bubble {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	border-radius: 100%;
+	border: 2px solid #e6be0c;
+	animation: growShrink 5s infinite;
+	top: 25%;
+	left: 50%;
+	margin-left: -61px;
+	padding: 20px;
+	z-index: 33;
+}
+
+.bubble span {
+	display: block;
+	width: 100px;
+	height: 100px;
+	background-color: #e6be0c;
+	border-radius: 50%;
+	font-size: 16px;
+	color: #fff;
+	text-align: center;
+	line-height: 100px;
+}
+
+@keyframes growShrink {
+
+	0%,
+	100% {
 		transform: scale(1);
 	}
 
 	50% {
-		transform: scale(1.2);
-	}
-
-	100% {
-		transform: scale(1);
+		transform: scale(1.5);
 	}
 }
 
-.progress-bar {
-	width: 80%;
-	height: 10px;
-	background-color: #ccc;
-	border-radius: 5px;
-	margin: 20px auto;
-}
-
-.progress-fill {
-	width: 60%;
-	/* Placeholder for 6/10 progress */
-	height: 100%;
-	background-color: #ff8c00;
-	border-radius: 5px;
-}
-
-.progress-text {
-	font-size: 18px;
-	margin-bottom: 20px;
-}
-
-/* Stage 2 (Collecting Objects) */
-#stage2-screen {
-	background: linear-gradient(to bottom, #1e3c72, #2a5298);
-	/* Placeholder for starry night */
-}
-
-.collect-area {
-	height: 400px;
-	position: relative;
-	margin: 50px 0;
-}
-
-.collect-object {
+.press {
 	position: absolute;
-	font-size: 30px;
-	cursor: pointer;
-	transition: opacity 0.3s;
-}
-
-.collect-object:nth-child(1) {
-	top: 50px;
-	left: 50px;
-}
-
-.collect-object:nth-child(2) {
-	top: 150px;
-	right: 50px;
-}
-
-.collect-object:nth-child(3) {
-	bottom: 100px;
-	left: 100px;
-}
-
-/* End Screen */
-.end-buttons {
-	display: flex;
-	justify-content: center;
-	gap: 10px;
-}
-
-/* Sound Toggle */
-.sound-toggle {
-	position: absolute;
-	bottom: 20px;
+	bottom: 15vh;
 	left: 20px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
 }
 
-.sound-toggle button {
-	background: none;
-	border: none;
-	font-size: 24px;
-	cursor: pointer;
+#shuzi {
+	color: #fff;
+	line-height: 50px;
+	font-size: 16px;
+}
+
+#number {
+	height: 10px;
+	width: 0;
+	background: #e6be0c;
+	transition: width linear 2s;
+}
+
+.dn {
+	display: none;
+}
+
+.next {
+	color: #fff;
+	text-decoration: none;
+	display: inline-block;
+	padding: 5px 10px;
+	border-radius: 5px;
+	background: #e6be0c;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+/* Tablet Adjustments */
+@media screen and (min-width: 768px) {
+	.start {
+		border-radius: 20px;
+	}
+
+	.start h3 {
+		font-size: 36px;
+	}
+
+	.btn_start {
+		font-size: 32px;
+	}
+
+	.press {
+		left: 20%;
+	}
+}
+
+/* Desktop Adjustments */
+@media screen and (min-width: 960px) {
+	.press {
+		left: 30%;
+	}
 }

@@ -7,22 +7,42 @@
 // - You'll need to link this file to your HTML :)
 
 // Navigation between screens
-function navigateTo(screenId) {
-    document.querySelectorAll('.screen').forEach(screen => {
-        screen.classList.remove('active');
+
+// JavaScript for breathing exercise
+document.addEventListener("DOMContentLoaded", () => {
+    const startScreen = document.querySelector("#start-screen");
+    const stage1 = document.querySelector("#stage1");
+    const startButton = document.querySelector(".btn_start");
+
+    // Click botton to stage 1
+    startButton.addEventListener("click", () => {
+        startScreen.style.display = "none";
+        stage1.style.display = "block";
+        startBreathingExercise();
     });
-    document.getElementById(screenId).classList.add('active');
-}
 
-// Placeholder for sound toggle
-function toggleSound() {
-    const soundBtn = document.querySelector('.sound-toggle button');
-    soundBtn.textContent = soundBtn.textContent === '🔊' ? '🔇' : '🔊';
-    // Add actual sound toggle logic later
-}
+    function startBreathingExercise() {
+        let breathCount = 0;
+        const maxBreaths = 10;
+        const progressBar = document.querySelector("#number");
+        const counter = document.querySelector("#shuzi");
+        const bubble = document.querySelector("#bubble");
+        const nextButton = document.querySelector("#dn");
 
-// Collect objects in Stage 2
-function collectObject(element) {
-    element.style.opacity = '0'; // Hide the object when clicked
-    // Add logic to update progress and play sound effect later
-}
+        counter.textContent = `${breathCount}/${maxBreaths}`;
+
+        const interval = setInterval(() => {
+            breathCount++;
+            const progressWidth = (breathCount / maxBreaths) * 300; // 最大宽度 300px
+            progressBar.style.width = `${progressWidth}px`;
+            counter.textContent = `${breathCount}/${maxBreaths}`;
+
+            if (breathCount >= maxBreaths) {
+                clearInterval(interval);
+                bubble.style.animation = "none";
+                nextButton.className = "next";
+                nextButton.style.display = "inline-block";
+            }
+        }, 5000);
+    }
+});

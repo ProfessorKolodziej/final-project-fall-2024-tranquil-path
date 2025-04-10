@@ -14,35 +14,32 @@
 </head>
 
 <body>
-	<!--Menu Screen-->
-	<section id="menu-screen" class="screen active">
-		<div class="card">
-			<h1>TRANQUIL PATH</h1>
-			<button onclick="navigateTo('stage1-screen')">START GAME</button>
+	<!-- Start Screen -->
+	<div class="container" id="start-screen">
+		<div class="start">
+			<h3>TRANQUIL PATH</h3>
+			<div class="btn_start">START GAME</div>
+			<div class="jump_btn">
+				<a href="#stage1">STEP 1</a>
+				<a href="./step1.html">STEP 2</a>
+			</div>
 		</div>
-		<div class="sound-toggle">
-			<button onclick="toggleSound()"><img src="images/sound-icon.png" /></button>
+	</div>
+
+	<!-- Stage 1 -->
+	<div class="container" id="stage1" style="display: none;">
+		<div class="bg1">
+			<div class="bubble" id="bubble">
+				<span>breathe out</span>
+			</div>
+			<div class="press">
+				<span id="shuzi">0/10</span>
+				<div id="number"></div>
+				<a class="dn" id="dn" href="./step1.html">Next Stage</a>
+			</div>
 		</div>
-	</section>
-	<!--Stage 1-->
-	<section id="stage1-screen" class="screen">
-		<div class="stage-label">STAGE 1</div>
-		<div class="breathing-circle">
-			<div class="circle-text">breathe in</div>
-			<div class="circle-text">breathe out</div>
-		</div>
-		<div class="progress-bar">
-			<div class="progress-fill"></div>
-		</div>
-		<div class="progress-text"></div>
-		<button class="next-button" onclick="navigateTo('stage2-screen')">NEXT STAGE</button>
-		<div class="sound-toggle">
-			<button onclick="toggleSound()"><img src="images/sound-icon.png"></button>
-		</div>
-	</section>
-	<!--
-        This is where you should link your JS file.
-    -->
+	</div>
+
 	<script src="js/scripts.js"></script>
 </body>
 
