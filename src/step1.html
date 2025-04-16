@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>随机图片点击游戏</title>
+		<link rel="stylesheet" href="./css/step1.css" />
+		<!-- <style>
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+        background: url(./images/1.jpg) no-repeat center;
+        background-size: 100% 100%;
+        background-color: #f0f0f0;
+      }
+      .image-container {
+        position: absolute;
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+      .image-container:hover {
+        transform: scale(1.05);
+      }
+      .image-container img {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      .body_bottom {
+        position: fixed;
+        width: 100%;
+        bottom: 100px;
+        left: 0;
+      }
+      .body_bottom .step {
+        text-align: center;
+        font-style: 18px;
+        color: #fff;
+        font-weight: bold;
+      }
+      .body_bottom .next {
+        font-size: 18px;
+        height: 32px;
+        line-height: 32px;
+        font-weight: bold;
+        display: block;
+        margin: 0 auto;
+        margin-top: 20px;
+        padding: 0 10px;
+        background: #ef6c6c;
+        color: #fff;
+        width: 120px;
+        border-radius: 20px;
+        text-decoration: none;
+      }
+      .body_bottom .dn {
+        display: none;
+      }
+    </style> -->
+	</head>
+	<body>
+		<audio id="notificationSound">
+			<!-- <source
+        src="https://www.runoob.com/try/demo_source/horse.ogg"
+        type="audio/ogg"
+      /> -->
+			<source src="./images/粽子包好啦音效.mp3" type="audio/mpeg" />
+			您的浏览器不支持 audio 元素。
+		</audio>
+		<div class="body_bottom">
+			<div class="step"><span id="step">0</span>/20</div>
+			<div>
+				<a href="./end.html" class="next dn" id="next">NEXT STAGE</a>
+			</div>
+		</div>
+		<script>
+			var mynum = 0;
+			// 图片数组 - 可以替换为你自己的图片URL
+			const images = ["./images/xingxing.png", "./images/lingsheng.png"];
+
+			// 要显示的图片数量
+			const imageCount = 4;
+
+			// 初始化函数
+			function init() {
+				// 清除之前的所有图片
+				const existingImages =
+					document.querySelectorAll(".image-container");
+				existingImages.forEach((img) => img.remove());
+
+				// 创建指定数量的图片
+				for (let i = 0; i < imageCount; i++) {
+					createRandomImage();
+				}
+			}
+
+			// 创建随机位置的图片
+			function createRandomImage() {
+				// 创建图片容器
+				const container = document.createElement("div");
+				container.className = "image-container";
+
+				// 随机选择一张图片
+				const randomImage =
+					images[Math.floor(Math.random() * images.length)];
+
+				// 创建img元素
+				const img = document.createElement("img");
+				img.src = randomImage;
+				img.alt = "随机图片";
+
+				// 将img添加到容器中
+				container.appendChild(img);
+
+				// 设置随机位置
+				const maxX = window.innerWidth - 100;
+				const maxY = window.innerHeight - 240;
+				const randomX = Math.floor(Math.random() * maxX);
+				const randomY = Math.floor(Math.random() * maxY);
+
+				container.style.left = `${randomX}px`;
+				container.style.top = `${randomY}px`;
+
+				// 点击事件 - 图片消失并在新位置出现
+				container.addEventListener("click", function () {
+					var step = document.getElementById("step");
+					var next = document.getElementById("next");
+					// var notificationSound = document.getElementById("notificationSound");
+					// notificationSound.play();
+					this.remove();
+					mynum++;
+					if (mynum >= 20) {
+						next.className = "next";
+						step.innerHTML = 20;
+					} else {
+						next.className = "next dn";
+						step.innerHTML = mynum;
+					}
+					createRandomImage();
+				});
+
+				// 添加到body
+				document.body.appendChild(container);
+			}
+
+			// 窗口大小改变时重新布局
+			window.addEventListener("resize", function () {
+				init();
+			});
+
+			// 页面加载时初始化
+			window.addEventListener("load", init);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,98 @@
+@keyframes growShrink {
+    0%,
+    100% {
+      transform: scale(1); /* 开始和结束时大小 */
+    }
+    50% {
+      transform: scale(1.5); /* 中间放大 */
+    }
+  }
+  .dn {
+    display: none;
+  }
+  .press .next {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 5px;
+    background: #e6be0c;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  #shuzi {
+    color: #fff;
+    line-height: 50px;
+    font-size: 16px;
+  }
+  @media screen and (min-width: 320px) {
+    .container {
+      width: 100%;
+      position: relative;
+    }
+    .bubble {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      border-radius: 100%;
+      border: 2px solid #e6be0c;
+      animation: growShrink 5s infinite; /* 动画名称，持续时间，重复 */
+      top: 25%;
+      left: 50%;
+      margin-left: -61px;
+      padding: 20px;
+      /* margin-top: -25px; */
+      z-index: 33;
+    }
+    .bubble span {
+      display: block;
+      width: 100px;
+      height: 100px;
+      background-color: #e6be0c;
+      border-radius: 50%;
+      font-size: 16px;
+      color: #fff;
+      text-align: center;
+      line-height: 100px;
+    }
+    .bg1 {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      background: url(../images/2.jpg) no-repeat center;
+      background-size: 100% 100%;
+    }
+    .press {
+      position: absolute;
+      bottom: 15vh;
+      /* left: 20px; */
+      width: 300px;
+      left:50%;
+      margin-left: -150px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      /* margin: 0 auto; */
+    }
+    .press .txt {
+      font-style: 16px;
+      color: #fff;
+    }
+    .press #number {
+      height: 10px;
+      width: 0;
+      background: #e6be0c;
+      transition: width linear 2s;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .press {
+      left: 20%;
+    }
+  }
+  @media screen and (min-width: 960px) {
+    .press {
+      left: 30%;
+    }
+  }
