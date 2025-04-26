@@ -30,7 +30,7 @@ body {
 	display: block;
 }
 
-/* Card Styling (Menu and End Screen) */
+/* Card Styling */
 .card {
 	background-color: #B2D9EF;
 	border-radius: 20px;
@@ -76,10 +76,9 @@ body {
 	font-weight: bold;
 }
 
-/* Stage 1 (Breathing Exercise) */
+/* Stage 1 Breathing */
 #stage1-screen {
 	background: linear-gradient(to bottom, #4facfe, #00f2fe);
-	/* Placeholder for beach image */
 }
 
 .breathing-circle {
@@ -125,7 +124,6 @@ body {
 
 .progress-fill {
 	width: 60%;
-	/* Placeholder for 6/10 progress */
 	height: 100%;
 	background-color: #ff8c00;
 	border-radius: 5px;
@@ -136,10 +134,9 @@ body {
 	margin-bottom: 20px;
 }
 
-/* Stage 2 (Collecting Objects) */
+/* Stage 2 Collecting */
 #stage2-screen {
 	background: linear-gradient(to bottom, #1e3c72, #2a5298);
-	/* Placeholder for starry night */
 }
 
 .collect-area {
@@ -155,29 +152,14 @@ body {
 	transition: opacity 0.3s;
 }
 
-.collect-object:nth-child(1) {
-	top: 50px;
-	left: 50px;
-}
-
-.collect-object:nth-child(2) {
-	top: 150px;
-	right: 50px;
-}
-
-.collect-object:nth-child(3) {
-	bottom: 100px;
-	left: 100px;
-}
-
-/* End Screen */
+/* End screen */
 .end-buttons {
 	display: flex;
 	justify-content: center;
 	gap: 10px;
 }
 
-/* Sound Toggle */
+/* Sound toggle */
 .sound-toggle {
 	position: absolute;
 	bottom: 20px;
@@ -189,10 +171,6 @@ body {
 	border: none;
 	font-size: 24px;
 	cursor: pointer;
-}
-
-body {
-	font-family: 'Quicksand', Arial, sans-serif;
 }
 
 h1,
