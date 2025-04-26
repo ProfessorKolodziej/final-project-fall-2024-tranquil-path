@@ -3,12 +3,10 @@
   0%,
   100% {
     transform: scale(1);
-    /* 寮€濮嬪拰缁撴潫鏃跺ぇ灏� */
   }
 
   50% {
     transform: scale(1.5);
-    /* 涓棿鏀惧ぇ */
   }
 }
 
@@ -46,12 +44,10 @@
     border-radius: 100%;
     border: 2px solid #e6be0c;
     animation: growShrink 5s infinite;
-    /* 鍔ㄧ敾鍚嶇О锛屾寔缁椂闂达紝閲嶅 */
     top: 25%;
     left: 50%;
     margin-left: -61px;
     padding: 20px;
-    /* margin-top: -25px; */
     z-index: 33;
   }
 
@@ -78,7 +74,6 @@
   .press {
     position: absolute;
     bottom: 30vh;
-    /* left: 20px; */
     width: 300px;
     left: 50%;
     margin-left: -150px;
@@ -86,7 +81,6 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    /* margin: 0 auto; */
   }
 
   .press .txt {
