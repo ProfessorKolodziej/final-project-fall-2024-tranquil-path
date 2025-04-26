@@ -1,0 +1,113 @@
+@media screen and (min-width: 320px) {
+  body {
+    font-family: 'Quicksand', Arial, sans-serif;
+    font-weight: 400;
+  }
+
+  .container {
+    width: 100%;
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .start {
+    border-radius: 20%;
+    background: #bfd9e9;
+    padding: 10vh;
+    margin-top: 22vh;
+    height: 55vh;
+    box-sizing: border-box;
+  }
+
+  .start h3 {
+    font-size: 50px !important;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+
+  .start_1 h3 {
+    line-height: 60px;
+  }
+
+  .btn_start1 {
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+  }
+
+  .btn_start {
+    font-size: 20px;
+    color: #fff;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin: 0 20px;
+    background: #89c7e3;
+    border-radius: 40px;
+    margin-top: 10vh;
+  }
+
+  .jump_btn {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+    padding: 0 20px;
+  }
+
+  .jump_btn a {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 20px;
+    color: #fff;
+    background: #89c7e3;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .start {
+    border-radius: 20px;
+  }
+
+  .start h3 {
+    font-size: 36px;
+  }
+
+  .btn_start {
+    font-style: 32px;
+  }
+}
+
+@media screen and (min-width: 960px) {}
+
+h1,
+h2,
+h3,
+.btn_start,
+.btn_start1,
+.jump_btn a {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+p,
+span {
+  font-weight: 400;
+}
+
+.jump_btn {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 100px;
+  padding: 0 20px;
+}

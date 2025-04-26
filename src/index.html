@@ -2,48 +2,23 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Update your description here" />
-	<title>Update your title here</title>
-	<!--
-        This is where you should link your CSS file.
-    -->
-	<link href="css/style.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/begin.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-	<!--Menu Screen-->
-	<section id="menu-screen" class="screen active">
-		<div class="card">
-			<h1>TRANQUIL PATH</h1>
-			<button onclick="navigateTo('stage1-screen')">START GAME</button>
-		</div>
-		<div class="sound-toggle">
-			<button onclick="toggleSound()"><img src="images/sound-icon.png" /></button>
-		</div>
-	</section>
-	<!--Stage 1-->
-	<section id="stage1-screen" class="screen">
-		<div class="stage-label">STAGE 1</div>
-		<div class="breathing-circle">
-			<div class="circle-text">breathe in</div>
-			<div class="circle-text">breathe out</div>
-		</div>
-		<div class="progress-bar">
-			<div class="progress-fill"></div>
-		</div>
-		<div class="progress-text"></div>
-		<button class="next-button" onclick="navigateTo('stage2-screen')">NEXT STAGE</button>
-		<div class="sound-toggle">
-			<button onclick="toggleSound()"><img src="images/sound-icon.png"></button>
-		</div>
-	</section>
-	<!--
-        This is where you should link your JS file.
-    -->
-	<script src="js/scripts.js"></script>
+  <div class="container">
+    <div class="start">
+      <h3>TRANOUIL PATH</h3>
+      <div class="jump_btn">
+        <a href="./step1.html">START GAME</a>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
