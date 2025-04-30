@@ -33,7 +33,7 @@ function breath() {
 // 音乐播放控制
 const myAudio = document.getElementById("myAudio");
 const controlButton = document.getElementById("controlButton");
-let isPlaying = true; // 注意初始状态是 true，因为 audio 是 autoplay 的
+let isPlaying = true;
 
 function togglePlay() {
     if (isPlaying) {
